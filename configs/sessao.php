@@ -1,6 +1,6 @@
 <?php
 
-// As sessões são importantes para manter o usuário logado, para armazenar informações temporárias durante a navegação do usuário e persisti-las entre páginas diferentes.
+// --> As sessões são importantes para manter o usuário logado, para armazenar informações temporárias durante a navegação do usuário e persisti-las entre páginas diferentes.<--
 
 // primeiro passo é iniciar a sessão caso não esteja iniciada
 
