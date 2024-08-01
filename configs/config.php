@@ -13,6 +13,6 @@ define("PAGE_LOGIN", SERVER_ROOT . "login.php");
 
 // define as constantes do banco de dados, USERNAME, PASSWORD, DATABASE com as informações de conexão com o banco de dados
 define('USERNAME',"root");
-define('DATABASE', "projetoaula44");
+define('DATABASE', "projetoaula");
 define('PASSWORD', '');
 
