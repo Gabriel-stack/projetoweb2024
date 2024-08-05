@@ -9,9 +9,18 @@ global $pdo;
 // função para resgatar um usuário específico por email
 function buscarUsuarioPorEMmail($email){
 	global $pdo;
+	
+	$resultado = $pdo->query("SELECT * FROM usuarios where email = '$email'");
+	$resultado = $resultado->fetch();
+	return $resultado;
 }
 // função para inserir um novo usuário
-
+function adicionarUsuario($nome, $email, $senha){
+	global $pdo;
+	$senha = password_hash($senha, PASSWORD_DEFAULT);
+	$resultado = $pdo->query("INSERT INTO usuarios (nome, email, senha) values ('$nome','$email','$senha')");
+	return $resultado->execute();	
+}
 // função para atualizar um usuário
 
 
