@@ -19,7 +19,7 @@ function adicionarUsuario($nome, $email, $senha){
 	global $pdo;
 	$senha = password_hash($senha, PASSWORD_DEFAULT);
 	$resultado = $pdo->query("INSERT INTO usuarios (nome, email, senha) values ('$nome','$email','$senha')");
-	return $resultado->execute();	
+	return $resultado;	
 }
 // função para atualizar um usuário
 
