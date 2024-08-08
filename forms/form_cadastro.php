@@ -12,6 +12,7 @@ require_once "../database/usuario.php";
 if(empty($_POST['nome']) ||
   empty($_POST['email']) ||
   empty($_POST['senha'])){
+	setMensagemInstantanea('erro', 'Preencha todos os campos!');
 	irParaURL(PAGE_CADASTRO);
 }
 // resgata os valores dos campos nome, email e senha do formulário de cadastro e faz a sanitização dos dados
@@ -21,9 +22,11 @@ $senha = $_POST['senha'];
 // verifica se o email informado já está cadastrado no banco de dados, se sim, retorna mensagem de erro e redireciona para a página de cadastro
 $usuario = buscarUsuarioPorEMmail($email);
 if($usuario != false){
+	setMensagemInstantanea('erro', 'Email já cadastrado!');
 	irParaURL(PAGE_CADASTRO);
 }else{
 // caso o email não esteja cadastrado, insere o novo usuário no banco de dados e redireciona para a página de login com uma mensagem de sucesso
 	adicionarUsuario($nome, $email, $senha);
+	setMensagemInstantanea('sucesso', 'Usuário cadastrado com sucesso!');
 	irParaURL(PAGE_LOGIN);
 }

@@ -3,7 +3,6 @@
 require_once "configs/init.php";
 
 //verifica se o usuário está logado para redirecionar para a página de de lista de tarefas (index.php)
-
 // define o título da página para exibir no navegador
 $title = "Cadastro";
 

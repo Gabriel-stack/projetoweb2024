@@ -19,9 +19,28 @@ function usuarioLogado(){
 	return false;
 }
 // função para criar mensagens de alerta de sucesso ou erro de ações feitas pelo usuário
+function setMensagemInstantanea($tipo, $mensagem){
+	$_SESSION['status'] = [
+		'tipo' => $tipo,
+		'mensagem' => $mensagem
+	];
+}
 
 // função para resgatar a mensagem de alerta de sucesso ou erro
-
+function getMensagemInstantanea(){
+	if(isset($_SESSION['status'])){
+		if($_SESSION['status']['tipo'] == 'sucesso'){
+			echo "<div class='alert alert-success'>
+					{$_SESSION['status']['mensagem']}
+				</div>";
+		}else{
+			echo "<div class='alert alert-danger'>
+					{$_SESSION['status']['mensagem']}
+				</div>";
+		}
+		unset($_SESSION['status']);
+	}
+}
 // função para resgatar informações do usuário logado na sessão
 function getUsuario(){
 	if(usuarioLogado()){
