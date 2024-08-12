@@ -9,6 +9,8 @@ require_once "configs/init.php";
 if(usuarioLogado() == false){
 	irParaURL("login.php");
 }
+echo "<pre>";
+var_dump($_SESSION['usuario_logado']);
 // define o título da página para exibir no navegador
 
 // resgata tarefas não iniciadas, em andamento e finalizadas para exibir na página em 3 variáveis diferentes
