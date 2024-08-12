@@ -6,7 +6,7 @@ define("SERVER_ROOT", "http://localhost/meu_projeto/");
 //define a constante PAGE_LOGIN com o caminho da página de login usando o caminho absoluto definido anteriormente
 define("PAGE_LOGIN", SERVER_ROOT . "login.php");
 // define a constante PAGE_HOME com o caminho da página inicial do sistema onde vai ser exibida a lista de tarefas
-
+define('PAGE_HOME', SERVER_ROOT . "index.php");
 // define a constante PAGE_CADASTRO com o caminho da página de cadastro de usuário
 define('PAGE_CADASTRO', SERVER_ROOT . "cadastro.php");
 // define a constante PAGE_ATUALIZAR_TAREFA com o caminho da página de atualização de tarefa

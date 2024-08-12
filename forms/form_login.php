@@ -24,5 +24,9 @@ if($usuario == false ||
 	password_verify($senha, $usuario['senha']) == false){
 	setMensagemInstantanea('erro', 'Email ou senha inválidos!');
 	irParaURL(PAGE_LOGIN);
+}else{
+	setUsuario($usuario);
+	setMensagemInstantanea('sucesso', 'Login efetuado com sucesso!');
+	irParaURL(PAGE_HOME);
 }
 // se o usuário for encontrado e a senha informada for a mesma do banco de dados, define a sessão do usuário usando a função de sessão setUsuario e redireciona para a página de lista de tarefas (index.php) com uma mensagem de sucesso
