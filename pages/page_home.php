@@ -62,7 +62,18 @@
 						</tr>
 					</thead>
 					<tbody>
-						<!-- inserir loop para exibir tarefas não iniciadas -->
+						<!-- inserir laço para exibir tarefas não iniciadas -->
+						<?php foreach($tarefasNaoIniciadas as $tarefa) {?>
+							<tr>
+								<td><?php echo $tarefa['titulo'] ?></td>
+								<td>
+									<a class="btn btn-primary"
+									 href="<?php echo PAGE_ATUALIZAR_TAREFA . $tarefa['id'] ?>">
+										Editar
+									</a>
+								</td>
+							</tr>
+						<?php } ?>
 					</tbody>
 				</table>
 			</div>

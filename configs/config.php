@@ -10,6 +10,7 @@ define('PAGE_HOME', SERVER_ROOT . "index.php");
 // define a constante PAGE_CADASTRO com o caminho da página de cadastro de usuário
 define('PAGE_CADASTRO', SERVER_ROOT . "cadastro.php");
 // define a constante PAGE_ATUALIZAR_TAREFA com o caminho da página de atualização de tarefa
+define('PAGE_ATUALIZAR_TAREFA', SERVER_ROOT . "atualizar-tarefa.php?id=");
 
 // define as constantes do banco de dados, USERNAME, PASSWORD, DATABASE com as informações de conexão com o banco de dados
 define('USERNAME',"root");
