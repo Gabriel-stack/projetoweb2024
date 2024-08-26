@@ -13,5 +13,6 @@ $tarefa = getTarefaPorId($_GET['id']);
 if($tarefa == false){
 	irParaURL(PAGE_HOME);
 }
+
 // se chegar aqui, a tarefa foi resgatada com sucesso, então inclui o arquivo da página de atualização de tarefa
 require_once "pages/page_atualizar_tarefa.php";

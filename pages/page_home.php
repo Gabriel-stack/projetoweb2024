@@ -11,7 +11,7 @@
 	<?php require_once("pages/template/header.php"); ?>
 	<div class="container mt-3">
 		<!-- inserir função para exibir mensagem instantânea -->
-	<?php getMensagemInstantanea(); ?>
+		<?php getMensagemInstantanea(); ?>
 	</div>
 	<div class="container p-0 shadow mt-3">
 		<form action="forms/form_adicionar_tarefa.php" method="post">
@@ -63,12 +63,12 @@
 					</thead>
 					<tbody>
 						<!-- inserir laço para exibir tarefas não iniciadas -->
-						<?php foreach($tarefasNaoIniciadas as $tarefa) {?>
+						<?php foreach ($tarefasNaoIniciadas as $tarefa) { ?>
 							<tr>
 								<td><?php echo $tarefa['titulo'] ?></td>
 								<td>
 									<a class="btn btn-primary"
-									 href="<?php echo PAGE_ATUALIZAR_TAREFA . $tarefa['id'] ?>">
+										href="<?php echo PAGE_ATUALIZAR_TAREFA . $tarefa['id'] ?>">
 										Editar
 									</a>
 								</td>
@@ -90,6 +90,17 @@
 					</thead>
 					<tbody>
 						<!-- inserir loop para exibir tarefas em andamento -->
+						<?php foreach ($tarefasEmAndamento as $tarefa) { ?>
+							<tr>
+								<td><?php echo $tarefa['titulo'] ?></td>
+								<td>
+									<a class="btn btn-primary"
+										href="<?php echo PAGE_ATUALIZAR_TAREFA . $tarefa['id'] ?>">
+										Editar
+									</a>
+								</td>
+							</tr>
+						<?php } ?>
 					</tbody>
 				</table>
 			</div>
@@ -106,6 +117,17 @@
 					</thead>
 					<tbody>
 						<!-- inserir loop para exibir tarefas finalizadas -->
+						<?php foreach ($tarefasFinalizadas as $tarefa) { ?>
+							<tr>
+								<td><?php echo $tarefa['titulo'] ?></td>
+								<td>
+									<a class="btn btn-primary"
+										href="<?php echo PAGE_ATUALIZAR_TAREFA . $tarefa['id'] ?>">
+										Editar
+									</a>
+								</td>
+							</tr>
+						<?php } ?>
 					</tbody>
 				</table>
 			</div>

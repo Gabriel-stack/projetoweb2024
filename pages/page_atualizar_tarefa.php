@@ -27,21 +27,28 @@
 						<label class="form-label fw-bold" for="">Título <span class="text-danger">*</span></label>
 						<!-- colocar o valor do título da tarefa que foi salvo no banco e mostrar no campo de texto -->
 						<input type="text" class="form-control" name="titulo" id="" aria-describedby="helpId" placeholder=""
-						value="<?php $tarefa['titulo']?>">
+							value="<?php echo $tarefa['titulo'] ?>">
 					</div>
 
 					<div class="form-group mb-2">
 						<label class="form-label fw-bold" for="">Descrição</label>
 						<!-- colocar o valor da descrição da tarefa que foi salvo no banco e mostrar no campo de texto -->
-						<textarea class="form-control" name="descricao" id="" rows="3"></textarea>
+						<textarea class="form-control" name="descricao" id="" rows="3"><?php echo $tarefa['descricao'] ?>
+						</textarea>
 					</div>
 					<div class="form-group mb-2">
 						<label class="form-label fw-bold" for="">Status <span class="text-danger">*</span></label>
 						<select class="form-select" name="status" id="">
 							<!-- marcar como selecionado o status da tarefa que foi salvo no banco -->
-							<option value="1">Não iniciada</option>
-							<option value="2">Em andamento</option>
-							<option value="3">Finalizada</option>
+							<option value="1" <?php
+												echo $tarefa['status'] == 1 ? 'selected' : ''
+												?>>Não iniciada</option>
+							<option value="2" <?php
+												echo $tarefa['status'] == 2 ? 'selected' : ''
+												?>>Em andamento</option>
+							<option value="3" <?php
+												echo $tarefa['status'] == 3 ? 'selected' : ''
+												?>>Finalizada</option>
 						</select>
 					</div>
 				</div>
@@ -56,14 +63,15 @@
 			<div class="modal-content">
 				<form action="forms/form_excluir_tarefa.php" method="post">
 					<!-- adicionar campo oculto com o id da tarefa para saber qual tarefa excluir -->
-					<input type="hidden" name="id" value="">
+					<input type="hidden" name="id" value="<?php echo $tarefa['id']?>">
 					<div class="modal-header">
 						<h5 class="modal-title" id="modalExcluirLabel">Excluir tarefa</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<!-- mostrar o título da tarefa que será excluída -->
-						<p>Deseja realmente excluir a tarefa <strong></strong>?</p>
+						<p>Deseja realmente excluir a tarefa <strong><?php
+						echo $tarefa['titulo']?></strong>?</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

@@ -3,11 +3,10 @@
 // arquivo usado para tratamento de dados de formulário de excluir tarefa, validação e redirecionamento
 
 // importa o arquivo init.php para inicializar a aplicação com as configurações
-
+require_once "../configs/init.php";
 
 // importa o arquivo de manipulação da tabela tarefas no banco de dados por meio de funções
-
-// verifica se o navegador está acessando este arquivo por meio de uma requisição POST, senão, retorna um erro 405.
+require_once "../database/tarefa.php";
 
 // Verifica se o campo id foi preenchido, senão, retorna mensagem de erro e redireciona para a página anterior.
 
